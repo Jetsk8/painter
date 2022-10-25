@@ -1,0 +1,10 @@
+.about {
+
+    &__cover-image {
+        background-image: url(../img/cover/portrait.jpg);
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        box-shadow: 3px 5px 10px black;
+    }
+}
