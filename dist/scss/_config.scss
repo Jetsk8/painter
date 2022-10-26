@@ -1,0 +1,19 @@
+$primary-color: rgb(175, 141, 95);
+$secondary-color: rgba(0, 0, 0, 0.9);
+$text-color: rgb(0, 0, 0);
+$canvas-color: rgb(255, 240, 227);
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@function set-text-color($color) {
+    @if (lightness($color) > 40%) {
+        @return #000;
+    } @else {
+        @return #fff ; 
+    }
+}

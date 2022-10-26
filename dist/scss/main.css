@@ -1,0 +1,416 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-100vh);
+  transition: all 0.5s linear;
+}
+.nav.open {
+  transform: translateY(0);
+  z-index: 5;
+}
+.nav .menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  text-decoration: none;
+  align-items: right;
+  margin-left: 20vw;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  list-style-type: none;
+  padding-right: 2rem;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+  z-index: 2;
+}
+.nav .menu-nav.open {
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav__item {
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav__item.open {
+  transform: translateX(0);
+}
+.nav .menu-nav__item.active > a {
+  color: rgb(175, 141, 95);
+}
+.nav .menu-nav__link {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 2rem 0;
+  font-weight: 300;
+}
+.nav .menu-nav__link:hover {
+  color: rgb(175, 141, 95);
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 6;
+  right: 2rem;
+  top: 1rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+}
+.menu-btn__burger {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 28px;
+  height: 3px;
+  background: black;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 28px;
+  height: 3px;
+  background: black;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 3px;
+  background: black;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger.open {
+  transform: rotate(720deg);
+  background: transparent;
+}
+.menu-btn__burger.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+  background: rgb(175, 141, 95);
+}
+.menu-btn__burger.open::after {
+  width: 28px;
+  background: rgb(175, 141, 95);
+  transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.menu-nav__item:nth-child(1) {
+  transition-delay: 0.25s;
+}
+
+.menu-nav__item:nth-child(2) {
+  transition-delay: 0.35s;
+}
+
+.menu-nav__item:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
+.menu-nav__item:nth-child(4) {
+  transition-delay: 0.55s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home__cover-image {
+  background-image: url(../img/cover/yachts-cover.jpg);
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  box-shadow: 3px 5px 10px black;
+}
+.home__wisdom {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.507);
+  top: 50vh;
+  right: 0;
+  height: auto;
+  width: 60vw;
+  cursor: pointer;
+  z-index: 3;
+  border: 1px solid gray;
+  transition: all 0.5s ease-in-out;
+}
+.home__wisdom:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.home__wisdom:hover > h2 {
+  color: rgb(0, 0, 0);
+}
+.home__wisdom h1 {
+  text-align: right;
+  font-size: 1rem;
+  margin: 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.home__wisdom h2 {
+  text-align: right;
+  font-size: 0.7rem;
+  margin: 1rem;
+  color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 0.5s ease-in-out;
+}
+.home__intro {
+  background: rgb(175, 141, 95);
+  height: 0;
+  width: 100vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  box-shadow: 3px 5px 10px black;
+}
+.home__new-paintings {
+  width: 100vw;
+}
+.home__new-paintings__description {
+  background: rgb(175, 141, 95);
+  height: auto;
+  width: 100vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  box-shadow: 3px 5px 10px black;
+  padding: 20px;
+}
+.home__new-paintings__description h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.home__new-paintings__description h2 {
+  font-size: 1rem;
+}
+.home__new-paintings__pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-right: 18px;
+}
+.home__new-paintings__pics .img-wrapper {
+  width: 40vw;
+  height: 50vw;
+  margin-top: 20px;
+  z-index: 4;
+  cursor: pointer;
+  overflow: visible;
+}
+.home__new-paintings__pics .img-wrapper .new-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-top: 1px solid rgb(255, 240, 227);
+  border-left: 2px solid rgb(255, 240, 227);
+  box-shadow: 4px 4px 10px black;
+  transition: all 0.4s linear;
+}
+.home__new-paintings__pics .img-wrapper .new-image.zoom {
+  width: 80vw;
+  height: auto;
+  z-index: 10;
+  transform: translateY(-10px);
+  border-top: 2px solid rgb(255, 240, 227);
+  border-left: 4px solid rgb(255, 240, 227);
+  box-shadow: 30px 30px 60px black;
+  transition: width 0.5s 0.3s, height 0.5s 0.3s, transform 0.3s linear, border-top 0.5s 0.3s, border-left 0.5s 0.3s, box-shadow 0.5s 0.3s;
+}
+.home__new-paintings__pics .img-wrapper .img-caption {
+  position: relative;
+  text-align: center;
+  line-height: 1.5;
+  color: transparent;
+  background: transparent;
+  border-radius: 0 0 15px 15px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 5px;
+}
+.home__new-paintings__pics .img-wrapper .img-caption.open-caption {
+  visibility: hidden;
+}
+.home__new-paintings__pics .img-wrapper:hover > .img-caption {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+
+.gallery__paintings {
+  height: auto;
+  width: 100vw;
+}
+.gallery__paintings__description {
+  background: rgb(175, 141, 95);
+  height: auto;
+  width: 100vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  box-shadow: 3px 5px 10px black;
+  padding: 20px;
+  padding-left: 60px;
+}
+.gallery__paintings__description h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.gallery__paintings__description h2 {
+  font-size: 1rem;
+}
+.gallery__paintings__pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.gallery__paintings__pics .img-wrapper {
+  width: 40vw;
+  height: 50vw;
+  margin-top: 20px;
+  z-index: 4;
+  cursor: pointer;
+  overflow: visible;
+}
+.gallery__paintings__pics .img-wrapper .new-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-top: 1px solid rgb(255, 240, 227);
+  border-left: 2px solid rgb(255, 240, 227);
+  box-shadow: 4px 4px 10px black;
+  transition: all 0.4s linear;
+}
+.gallery__paintings__pics .img-wrapper .new-image.zoom {
+  width: 80vw;
+  height: auto;
+  z-index: 10;
+  transform: translateY(-10px);
+  border-top: 2px solid rgb(255, 240, 227);
+  border-left: 4px solid rgb(255, 240, 227);
+  box-shadow: 30px 30px 60px black;
+  transition: width 0.5s 0.3s, height 0.5s 0.3s, transform 0.3s linear, border-top 0.5s 0.3s, border-left 0.5s 0.3s, box-shadow 0.5s 0.3s;
+}
+.gallery__paintings__pics .img-wrapper .img-caption {
+  position: relative;
+  text-align: center;
+  line-height: 1.5;
+  color: transparent;
+  background: transparent;
+  border-radius: 0 0 15px 15px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 5px;
+}
+.gallery__paintings__pics .img-wrapper .img-caption.open-caption {
+  visibility: hidden;
+}
+.gallery__paintings__pics .img-wrapper:hover > .img-caption {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+
+.about__cover-image {
+  background-image: url(../img/cover/portrait.jpg);
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  box-shadow: 3px 5px 10px black;
+  background-position: center;
+}
+
+.contact__cover-image {
+  height: 40vh;
+  background-image: url(../img/cover/portrait.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.contact h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+.contact__list {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.contact__item {
+  width: 80vw;
+  text-align: center;
+  margin: 10px;
+  line-height: 1.2;
+  font-size: 1.5rem;
+  color: rgb(175, 141, 95);
+}
+.contact__item .text-secondary {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  background-image: url(../img/textures/wood1.jpg);
+  color: rgb(0, 0, 0);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
+}
+
+header {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  padding: 1rem;
+}
+
+main {
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+footer {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 0 5vw;
+}
+footer p {
+  text-align: right;
+  cursor: pointer;
+}
+
+.social-icons {
+  color: white;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+.social-icons a {
+  transition: all 0.5s linear;
+}
+.social-icons a:hover {
+  color: rgb(175, 141, 95);
+}/*# sourceMappingURL=main.css.map */
